@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive viewport</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            background: beige;
+            border: 2px solid black;
+            display: none;
+        }
+
+
+        @media only screen and (max-width:400px) {
+            #phone {
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width:400px) and (max-width:700px) {
+            #tablet {
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width:700px) {
+            #laptop {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="phone">This is phone</div>
+    <div class="container" id="tablet">This is tablet</div>
+    <div class="container" id="laptop">This is laptop</div>
+</body>
+
+</html>

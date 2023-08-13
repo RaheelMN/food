@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh food delivery</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* Variables */
+        :root {
+            --nav-font: 1.2rem;
+            --h1-font: 2rem;
+            --h2-font: 1.5rem;
+            --p-font: 1rem;
+            --btn-font: 1rem;
+            --input-font: .9rem;
+            --img-laptop: 220px;
+            --img-tablet: 150px;
+        }
+
+        /* Elements reset */
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Navigation Bar */
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #navbar::before {
+            content: "";
+            position: absolute;
+            background: rebeccapurple;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: .8;
+            transition: opacity linear .5s;
+
+
+        }
+
+        #navbar:hover::before {
+            opacity: 1;
+        }
+
+        /* Navigation Bar: logo img */
+        #logo {
+            padding: 10px 12px 10px 40px;
+
+        }
+
+        #logo img {
+            width: 50px;
+            border-radius: 50%;
+            border: 2px solid wheat;
+        }
+
+        /* Navigation bar: list items */
+        #navbar ul {
+            display: flex;
+        }
+
+        .items a {
+            display: block;
+            padding: 5px 15px;
+            margin: 0px 2px;
+            border-radius: 10px;
+            color: #dae3e3;
+            transition: all linear .5s;
+        }
+
+        .items a:hover {
+            background: white;
+            color: black;
+        }
+
+        .nav-font {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--nav-font);
+        }
+
+        /* home Section */
+        #home-background {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        #home-background::before {
+            content: "";
+            position: absolute;
+            background: url(./img/food_bg.jpg) no-repeat center center/cover;
+            width: 100%;
+            z-index: -1;
+            opacity: .85;
+            top: -61px;
+            bottom: 0px;
+        }
+
+        #home-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 10vw;
+            width: 100%;
+            height: 100%;
+        }
+
+        #home-content h1 {
+            color: white;
+        }
+
+        #home-content p {
+            color: white;
+            text-align: left;
+
+        }
+
+        #home-btn {
+            margin: 10px 0px;
+        }
+
+        /* Section services */
+
+        #services {
+            display: flex;
+        }
+
+        #services .box {
+            border: 2px solid brown;
+            padding: 15px;
+            margin: 6px;
+            border-radius: 13px;
+            background-color: #edf3f3;
+        }
+
+        #services .box img {
+            Width: 220px;
+            display: block;
+            margin: auto;
+        }
+
+        /* Client Section */
+        #client-section {
+            height: 300px;
+            position: relative;
+
+        }
+
+        #client-section::before {
+            content: "";
+            background: url("img/clients.jpg") no-repeat center/cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            opacity: .1;
+
+        }
+
+        #clients {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-item img {
+            Width: var(--img-laptop);
+            margin: 0px 1vw;
+        }
+
+        /* Contact Section */
+        #contact-section {
+            height: 300px;
+            position: relative;
+            margin: 20px 0px;
+
+        }
+
+        #contact-section::before {
+            content: "";
+            background: url("img/contact.jpg") no-repeat center/cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            opacity: .6;
+        }
+
+        #contact-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-box {
+            margin: 3px 0px;
+        }
+
+        .input-box input {
+            width: 100%;
+            font-size: var(--input-font);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .input-box label {
+            width: 100%;
+            font-size: var(--input-font);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .input-box textarea {
+            width: 100%;
+            font-size: var(--input-font);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        #footer {
+            background-color: black;
+            color: wheat;
+            text-align: center;
+            padding: 5px 0px;
+        }
+
+        /* Utility classes */
+        .h1 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: var(--h1-font);
+            text-align: center;
+            padding: 20px 0px 10px 0px;
+        }
+
+        .h2 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: var(--h2-font);
+            text-align: center;
+            padding: 8px 0px;
+        }
+
+        .p-font {
+            font-size: var(--p-font);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn {
+            border-radius: 10px;
+            padding: 8px 8px;
+            cursor: pointer;
+
+            font-size: var(--btn-font);
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bolder;
+
+            background-color: rgb(144, 115, 170);
+            color: wheat;
+            border: 2px solid rgb(74, 53, 92);
+            transition: all linear .5s;
+        }
+
+        .btn:hover {
+            color: white;
+            background-color: rgb(89, 67, 109);
+
+        }
+
+        /* media query */
+
+        /* Media screen for tablet */
+        /* @media only screen and(max-width:600px){ */
+
+        /* Services section */
+        /* #services { */
+        /* flex-direction: column; */
+        /* } */
+
+        /* Client section */
+        /* .client-item img {
+                Width: var(--img-tablet);
+            } */
+        /* } */
+
+        @media only screen and (max-width:500px) {
+
+            /* Services section */
+            #services {
+                flex-direction: column;
+                margin: 10px 10px;
+            }
+
+
+            /* Client section */
+            .client-item img {
+                width: 100px;
+                /* margin: 0px 1vw; */
+            }
+
+        }
+
+        @media only screen and (min-width:600px) and (max-width:800px){
+
+            /* Services section */
+            #services .box img {
+
+                width: var(--img-tablet);
+            }
+
+
+            /* Client section */
+            .client-item img {
+                width: var(--img-tablet);
+
+            }
+
+        }
+
+        @media only screen and (min-width:500px) and (max-width:600px){
+
+/* Services section */
+#services {
+    flex-wrap: wrap;
+
+}
+
+
+/* Client section */
+.client-item img {
+    width: var(--img-tablet);
+
+}
+
+}        
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./img/logo.jpg" alt="logo.jpg">
+        </div>
+        <ul>
+            <li class="items"><a class="nav-font" href="#home">Home</a></li>
+            <li class="items"><a class="nav-font" href="#services">Services</a></li>
+            <li class="items"><a class="nav-font" href="#About-Us">About Us</a></li>
+            <li class="items"><a class="nav-font" href="#Contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    <section id="home-background">
+        <div id="home-content">
+            <h1 class="h1">Welcome to fresh food Service</h1>
+            <p class="p-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veniam corporis cumque, in
+                maxime totam
+                repellat voluptatum, eveniet animi, quo amet fugiat? Cupiditate quae vero nemo. At aliquid atque
+                quisquam?
+            </p>
+            <p class="p-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem commodi libero,
+                ipsum ea aut qui ipsa
+                velit repudiandae eum officia.</p>
+            <input id="home-btn" class="btn" type="button" value="Order NOW">
+        </div>
+    </section>
+
+    <section id="services-container">
+        <h1 class="h1">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="./img/food_sec1.jpg" alt="food image">
+                <h2 class="h2">Food Ordering</h2>
+                <p class="p-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veniam corporis cumque,
+                    in maxime
+                    totam
+                    repellat voluptatum, eveniet animi, quo amet fugiat? Cupiditate quae vero nemo. At aliquid atque
+                    quisquam?
+                </p>
+            </div>
+            <div class="box">
+                <img src="./img/food_sec2.jpg" alt="food image">
+                <h2 class="h2">Food Catering</h2>
+                <p class="p-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veniam corporis cumque,
+                    in maxime
+                    totam
+                    repellat voluptatum, eveniet animi, quo amet fugiat? Cupiditate quae vero nemo. At aliquid atque
+                    quisquam?
+                </p>
+            </div>
+            <div class="box">
+                <img src="./img/food_sec3.jpg" alt="food image">
+                <h2 class="h2">Bulk Ordering</h2>
+                <p class="p-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veniam corporis cumque,
+                    in maxime
+                    totam
+                    repellat voluptatum, eveniet animi, quo amet fugiat? Cupiditate quae vero nemo. At aliquid atque
+                    quisquam?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h1">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="./img/logo_1.png" alt="client logo">
+            </div>
+            <div class="client-item">
+                <img src="./img/logo_2.png" alt="client logo">
+            </div>
+            <div class="client-item">
+                <img src="./img/logo_3.png" alt="client logo">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact-section">
+        <h1 class="h1">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="input-box">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="input-box">
+                    <label for="phone">phone</label>
+                    <input type="phone" name="phone" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="input-box">
+                    <label for="message">Message</label>
+                    <textarea row="5" col="20 " id="message" name="message">Enter your message</textarea>
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <footer>
+        <div id="footer">
+            &copy 2022 All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
