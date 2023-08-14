@@ -1,1 +1,16 @@
-rough.html
+# full path to ignore file is given which start with / that is root directory of project
+/rough.html
+# ignore a folder and its content with respect to root directory
+/css/
+
+#ignore folder and its contents anywhere in directory
+logs/
+
+# ignore all javascript files in any folder
+*.js
+
+#ignore all CSS files in any folder
+*.css
+
+# ignore file with name in any folder
+japan.html
